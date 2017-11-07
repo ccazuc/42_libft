@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 09:29:10 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 16:50:21 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/07 17:27:01 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 			result_elem = result_elem->next;
 			lst = lst->next;
 		}
+		result_elem->next = NULL;
 		return (result);
 	}
 	return (NULL);

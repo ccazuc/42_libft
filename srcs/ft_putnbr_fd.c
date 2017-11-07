@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 10:54:52 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 10:57:25 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/07 16:58:59 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ static void		print_min_value(int fd)
 	ft_putchar_fd('4', fd);
 	ft_putchar_fd('8', fd);
 	ft_putchar_fd('3', fd);
+	ft_putchar_fd('6', fd);
+	ft_putchar_fd('4', fd);
 	ft_putchar_fd('8', fd);
 }
 
