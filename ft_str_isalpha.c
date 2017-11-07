@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_str_isalpha.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 07:27:06 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:01:38 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 11:02:17 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 11:05:57 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int		ft_str_isalpha(const char *str)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int		i;
+
+	i = -1;
+	while (str[++i])
+		if (!ft_isalpha((int)str[i]))
+			return (0);
+	return (1);
 }

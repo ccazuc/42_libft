@@ -1,54 +1,69 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 10:54:52 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 10:57:25 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 10:09:45 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 10:51:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		print_min_value(int fd)
+static int	get_len(int n)
 {
-	ft_putchar_fd('-', fd);
-	ft_putchar_fd('2', fd);
-	ft_putchar_fd('1', fd);
-	ft_putchar_fd('4', fd);
-	ft_putchar_fd('7', fd);
-	ft_putchar_fd('4', fd);
-	ft_putchar_fd('8', fd);
-	ft_putchar_fd('3', fd);
-	ft_putchar_fd('8', fd);
+	int		size;
+
+	size = n > 0 ? 1 : 2;
+	n = n > 0 ? n : -n;
+	while (n > 0)
+	{
+		n /= 10;
+		++size;
+	}
+	return (size);
 }
 
-void			ft_putnbr_fd(int n, int fd)
+static char	*do_malloc(int *n)
+{
+	char	*result;
+
+	if (!(result = malloc(get_len(*n))))
+		return (NULL);
+	if (*n < 0)
+	{
+		*n = -*n;
+		result[0] = '-';
+	}
+	return (result);
+}
+
+char		*ft_itoa(int n)
 {
 	int		tmp;
 	int		length;
+	char	*result;
+	int		i;
 
 	if (n == -2147483648)
-	{
-		print_min_value(fd);
-		return ;
-	}
+		return (ft_strdup("-2147483648"));
+	if (n == 0)
+		return (ft_strdup("0"));
+	result = do_malloc(&n);
 	length = 1;
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-	}
 	tmp = n;
 	while ((tmp = (tmp / 10)) > 0)
 		length *= 10;
 	tmp = n;
+	i = result[0] == '-' ? 1 : 0;
 	while (length)
 	{
-		ft_putchar_fd((tmp / length) + '0', fd);
+		result[i] = ((tmp / length) + '0');
 		tmp %= length;
 		length /= 10;
+		++i;
 	}
+	return (result);
 }

@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putstr_array.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 07:27:06 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:01:38 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 10:57:47 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 10:59:00 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putstr_array(char **array)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int		i;
+
+	i = -1;
+	while (array[++i])
+		ft_putstr(array[i]);
 }

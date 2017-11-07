@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strcount.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 07:27:06 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:01:38 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 10:51:05 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 10:53:27 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int		ft_strcount(char *str, char c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	int		i;
+	int		count;
+
+	i = -1;
+	count = 0;
+	while (str[++i])
+		if (str[i] == c)
+			++count;
+	return (count);
 }

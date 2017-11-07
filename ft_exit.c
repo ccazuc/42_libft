@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_exit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 07:27:06 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:01:38 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 10:59:15 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 11:01:05 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_exit(char *str, int exit_value)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	ft_putendl_fd(str, 2);
+	exit(exit_value);
 }
