@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 06:10:51 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 06:11:49 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 06:04:48 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 06:05:07 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	int		j;
-	int		to_find_len;
+	unsigned int	ret;
+	size_t			i;
+	size_t			j;
 
-	i = strlen(little);
-	if (i == 0)
-		return (char*)(big);
-	to_find_len = i;
 	i = 0;
-	while (big[i] && i < len)
+	while (dst[i])
+		i++;
+	j = 0;
+	while (src[j])
+		j++;
+	ret = j + (size < i ? size : i);
+	j = 0;
+	while (src[j] && i < size - 1)
 	{
-		j = 0;
-		while (big[i + j] == little[j])
-		{
-			if (j == to_find_len - 1)
-				return ((char*)(big + i));
-			j++;
-		}
-		++i;
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (NULL);
+	dst[i] = '\0';
+	return (ret);
 }

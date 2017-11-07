@@ -1,38 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 06:10:51 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 06:11:49 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 07:44:11 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 08:00:48 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	test(int value[2])
 {
-	size_t	i;
-	int		j;
-	int		to_find_len;
+	(void)value;
+}
 
-	i = strlen(little);
-	if (i == 0)
-		return (char*)(big);
-	to_find_len = i;
-	i = 0;
-	while (big[i] && i < len)
-	{
-		j = 0;
-		while (big[i + j] == little[j])
-		{
-			if (j == to_find_len - 1)
-				return ((char*)(big + i));
-			j++;
-		}
-		++i;
-	}
-	return (NULL);
+int		main(int argc, char **argv)
+{
+	char	**result;
+	int		i;
+
+	if (argc <= 2)
+		return (0);
+	i = -1;
+	result = ft_strsplit(argv[1], argv[2][0]);
+	while (result[++i])
+		ft_putendl(result[i]);
+	return (0);
 }
