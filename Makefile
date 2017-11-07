@@ -6,7 +6,7 @@
 #    By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:15:45 by ccazuc            #+#    #+#              #
-#    Updated: 2017/11/07 12:11:39 by ccazuc           ###   ########.fr        #
+#    Updated: 2017/11/07 16:34:47 by ccazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -Ofast -g
 
-INCLUDES_PATH = include/
+INCLUDES_PATH = includes/
 
-SRCS_PATH = src/
+SRCS_PATH = srcs/
 
 SRCS_NAME = ft_atoi.c \
 			ft_bzero.c \

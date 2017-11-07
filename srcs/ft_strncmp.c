@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 09:29:10 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 09:45:43 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 06:12:15 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 16:02:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	t_list	*result;
-	t_list	*result_elem;
+	size_t i;
 
-	if (lst)
+	i = 0;
+	while (i < n && s1[i] && s2[i])
 	{
-		result = (*f)(lst);
-		result_elem = result;
-		lst = lst->next;
-		while (lst)
-		{
-			result_elem->next = (*f)(lst);
-			result_elem = result_elem->next;
-			lst = lst->next;
-		}
-		return (result);
+		if ((unsigned char)s1[i] != (unsigned char)s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		++i;
 	}
-	return (NULL);
+	if (s2[i] && i < n)
+		return ((unsigned char)-s2[i]);
+	if (s1[i] && i < n)
+		return ((unsigned char)s1[i]);
+	return (0);
 }

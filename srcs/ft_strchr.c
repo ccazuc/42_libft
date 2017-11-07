@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 06:38:49 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 12:27:32 by ccazuc           ###   ########.fr       */
+/*   Created: 2017/11/07 06:05:46 by ccazuc            #+#    #+#             */
+/*   Updated: 2017/11/07 15:40:11 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-char	*ft_strtrim(char const *s)
+char	*ft_strchr(const char *s, int c)
 {
-	int		i;
-	int		start;
-	int		end;
+	int i;
 
-	i = 0;
-	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-		++i;
-	start = i;
-	i = ft_strlen(s) - 1;
-	end = 0;
-	while (i > 0 && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
-		--i;
-	end = i + 1;
-	if (end < start || end == start)
-		return (ft_memalloc(0));
-	return (ft_strsub(s, start, end - start));
+	i = -1;
+	while (s[++i])
+		if (s[i] == (unsigned char)c)
+			return ((char*)(s + i));
+	if (c == '\0')
+		return ((char*)(s + i));
+	return (NULL);
 }
