@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:06:04 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:07:34 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/07 11:41:06 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_str_isdigit(char *str)
 
 	i = -1;
 	while (str[++i])
-		if (!ft_isdigit((int)str[i])
+		if (!ft_isdigit((int)str[i]))
 			return (0);
 	return (1);
 }

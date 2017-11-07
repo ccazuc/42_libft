@@ -6,15 +6,15 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 06:38:49 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 06:38:51 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/07 12:27:32 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
-	char	*result;
 	int		i;
 	int		start;
 	int		end;
@@ -23,10 +23,11 @@ char	*ft_strtrim(char const *s)
 	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		++i;
 	start = i;
+	i = ft_strlen(s) - 1;
 	end = 0;
-	while (s[i] && s[i] != ' ' && s[i] != '\n' && s[i] != '\t')
-		++i;
-	end = i;
+	while (i > 0 && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
+		--i;
+	end = i + 1;
 	if (end < start || end == start)
 		return (ft_memalloc(0));
 	return (ft_strsub(s, start, end - start));
