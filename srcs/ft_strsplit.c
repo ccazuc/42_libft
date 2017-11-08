@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 07:39:44 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 08:21:14 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/08 07:22:19 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int		get_nb_word(const char *str, char match)
 	return ((tmp == match) ? nb_word : nb_word + 1);
 }
 
-void			get_n_word(const char *str, char **result, int v[2], int *index)
+static void		get_n_word(const char *str, char **result, int v[2], int *index)
 {
 	int		i;
 	int		res_i;

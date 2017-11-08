@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 06:06:24 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 16:57:10 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/08 07:24:14 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int i;
 
-	i = strlen(s) + 1;
+	i = ft_strlen(s) + 1;
 	if (c == 0)
 		return ((char*)(s + i - 1));
 	while (--i >= 0)

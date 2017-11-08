@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 06:10:51 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 16:19:18 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/08 07:24:04 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	int		j;
 	int		to_find_len;
 
-	i = strlen(little);
+	i = ft_strlen(little);
 	if (i == 0)
 		return (char*)(big);
 	to_find_len = i;

@@ -6,13 +6,13 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 08:21:19 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 08:24:51 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/08 07:21:17 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_get_ini_pos(const char *str)
+static int		ft_get_ini_pos(const char *str)
 {
 	int		i;
 	char	tmp;
@@ -38,7 +38,7 @@ int		ft_get_ini_pos(const char *str)
 	return (-1);
 }
 
-int		get_end_pos(int i, const char *str)
+static int		get_end_pos(int i, const char *str)
 {
 	char	tmp;
 	int		start;
@@ -53,7 +53,7 @@ int		get_end_pos(int i, const char *str)
 	return (i);
 }
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	int		i;
 	int		result;
