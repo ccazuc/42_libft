@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 05:37:07 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/07 11:41:31 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/09 13:29:29 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,10 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int n);
 char			*ft_itoa(int n);
 int				ft_atoi(char const *str);
+char			*ft_strjoin_free12(char *s1, char *s2);
+char			*ft_strsub_start(char *str, int start);
+char			*ft_strjoin_free1(char *s1, char *s2);
+void			ft_exit(char *str, int exit_value);
 
 typedef struct	s_list
 {
