@@ -6,7 +6,7 @@
 #    By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:15:45 by ccazuc            #+#    #+#              #
-#    Updated: 2017/11/07 16:34:47 by ccazuc           ###   ########.fr        #
+#    Updated: 2017/11/08 10:54:10 by ccazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,6 +82,9 @@ SRCS_NAME = ft_atoi.c \
 			ft_strcount.c \
 			ft_str_isdigit.c \
 			ft_exit.c \
+			ft_strjoin_free12.c \
+			ft_strsub_start.c \
+			ft_strjoin_free1.c \
 
 SRCS = $(addprefix $(SRCS_PATH), $(SRCS_NAME))
 
