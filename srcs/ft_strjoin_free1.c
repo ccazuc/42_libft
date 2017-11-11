@@ -6,7 +6,11 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:14:47 by ccazuc            #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2017/11/08 12:00:59 by ccazuc           ###   ########.fr       */
+=======
+/*   Updated: 2017/11/10 08:30:54 by ccazuc           ###   ########.fr       */
+>>>>>>> 44ba09dbde3e6ce156b30dd780c2724c90f9e11d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +22,30 @@ char	*ft_strjoin_free1(char *s1, char *s2)
 	char	*result;
 	int		i;
 	int		j;
+<<<<<<< HEAD
 
 	if (!(result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+=======
+	int		size;
+	
+	i = 0;
+	while (s1 && s1[i])
+		++i;
+	size = i;
+	i = 0;
+	while (s2 && s2[i])
+		++i;
+	size = size + i + 1;
+	if (!(result = malloc(size * sizeof(*result))))
+>>>>>>> 44ba09dbde3e6ce156b30dd780c2724c90f9e11d
 		return (NULL);
 	i = -1;
 	while (s1 && s1[++i])
 		result[i] = s1[i];
+<<<<<<< HEAD
+=======
+	i = i == -1 ? i + 1 : i;
+>>>>>>> 44ba09dbde3e6ce156b30dd780c2724c90f9e11d
 	j = -1;
 	while (s2 && s2[++j])
 		result[i + j] = s2[j];
