@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 06:38:49 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/08 06:39:21 by ccazuc           ###   ########.fr       */
+/*   Updated: 2017/11/15 08:22:03 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s)
 	int		start;
 	int		end;
 
+	if (!s)
+		return (NULL);
 	i = 0;
 	while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 		++i;
