@@ -6,7 +6,7 @@
 #    By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:15:45 by ccazuc            #+#    #+#              #
-#    Updated: 2017/11/15 07:36:49 by ccazuc           ###   ########.fr        #
+#    Updated: 2018/04/30 09:19:43 by ccazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,10 @@ NAME = libft.a
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
+
+SRCS_PATH = srcs/
+
+INCLUDES_PATH = includes/
 
 SRCS_NAME = ft_atoi.c \
 			ft_bzero.c \
@@ -93,7 +97,7 @@ SRCS_NAME = ft_atoi.c \
 			ft_putstr_array.c \
 			ft_str_isalpha.c \
 
-SRCS = $(SRCS_NAME)
+SRCS = $(addprefix $(SRCS_PATH), $SRCS_NAME))
 
 OBJS_PATH = obj/
 
@@ -110,7 +114,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_PATH)%.o: $(SRCS_PATH)%.c
 	@echo " - Compiling $<"
-	@$(CC) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(CFLAGS) -o $@ -c $< -I$(INCLUDES_PATH)
 
 odir:
 	@mkdir -p $(OBJS_PATH)
