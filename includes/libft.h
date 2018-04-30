@@ -6,7 +6,7 @@
 /*   By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 05:37:07 by ccazuc            #+#    #+#             */
-/*   Updated: 2017/11/15 08:17:29 by ccazuc           ###   ########.fr       */
+/*   Updated: 2018/04/30 09:26:02 by ccazuc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,7 @@ int					ft_strcount(char *str, char c);
 int					ft_str_isdigit(char *str);
 int					ft_str_isalpha(char const *str);
 void				ft_putstr_array(char **array);
+int					ft_array_len(char **array);
+int					ft_strcmp_ignrcase(char char *s1, const char *s2);
 
 #endif

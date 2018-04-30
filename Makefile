@@ -6,7 +6,7 @@
 #    By: ccazuc <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 11:15:45 by ccazuc            #+#    #+#              #
-#    Updated: 2018/04/30 09:19:43 by ccazuc           ###   ########.fr        #
+#    Updated: 2018/04/30 09:25:29 by ccazuc           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,8 @@ SRCS_NAME = ft_atoi.c \
 			ft_isxdigit.c \
 			ft_putstr_array.c \
 			ft_str_isalpha.c \
+			ft_array_len.c \
+			ft_strcmp_ignrcase.c \
 
 SRCS = $(addprefix $(SRCS_PATH), $SRCS_NAME))
 
